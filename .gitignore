@@ -1,0 +1,177 @@
+# Kolamify Project .gitignore
+# For SIH_Project structure with Python, ML models, and web components
+
+# ==================== PYTHON ====================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ==================== MACHINE LEARNING MODELS ====================
+# Large model files (use Git LFS for these if needed)
+ml_model/models/*.pt
+ml_model/models/*.pth
+ml_model/models/*.h5
+ml_model/models/*.keras
+ml_model/models/*.pkl
+ml_model/models/*.joblib
+ml_model/models/*.onnx
+
+# Training data (too large for GitHub)
+ml_model/data/
+!ml_model/data/.gitkeep  # Keep empty directory structure
+
+# Output files and predictions
+ml_model/outputs/
+!ml_model/outputs/.gitkeep
+
+# TensorBoard logs
+logs/
+*.log
+ml_model/tensorboard/
+
+# Model checkpoints
+*.ckpt
+checkpoints/
+
+# ==================== SERVER & UPLOADS ====================
+# User uploaded files
+server/uploads/
+!server/uploads/.gitkeep
+
+# Flask instance folders
+instance/
+
+# Environment variables
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Flask secret key
+secret_key.py
+
+# ==================== FRONTEND ====================
+# Node.js (if you add later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Browser cache
+*.tmp
+*.temp
+
+# ==================== OPERATING SYSTEM ====================
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ==================== IDE & EDITOR ====================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-*
+
+# Eclipse
+.metadata
+
+# ==================== VIRTUAL ENVIRONMENTS ====================
+# Virtual environments
+kolamify_env/
+venv/
+env/
+.venv/
+
+# ==================== LOGS ====================
+# Log files
+*.log
+logs/
+
+# ==================== TEMPORARY FILES ====================
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ==================== CUSTOM ====================
+# Custom large files specific to your project
+*.zip
+*.tar
+*.gz
+
+# Keep empty directories (add these files manually)
+.gitkeep

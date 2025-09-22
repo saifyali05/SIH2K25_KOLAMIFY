@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .test-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #ff6b6b;
+        }
+        
+        .test-form {
+            margin-top: 20px;
+        }
+        
+        .test-input {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .test-button {
+            background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Login Form Test</h1>
+        <p>This is a test to check if the login form is visible</p>
+        
+        <form class="test-form" onsubmit="testLogin(event)">
+            <input type="text" class="test-input" placeholder="Username" id="testUsername" required>
+            <input type="password" class="test-input" placeholder="Password" id="testPassword" required>
+            <button type="submit" class="test-button">Test Login</button>
+        </form>
+        
+        <button type="button" class="test-button" onclick="goToOriginalLogin()">Go to Original Login</button>
+        
+        <div id="testResult" style="margin-top: 20px; padding: 10px; border-radius: 5px; display: none;"></div>
+    </div>
+
+    <script>
+        function testLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('testUsername').value;
+            const password = document.getElementById('testPassword').value;
+            const result = document.getElementById('testResult');
+            
+            if (username === 'admin' && password === 'admin') {
+                result.style.background = '#10b981';
+                result.textContent = 'Test Login Successful! Form is working.';
+                result.style.display = 'block';
+                
+                setTimeout(() => {
+                    window.location.href = 'main.html';
+                }, 2000);
+            } else {
+                result.style.background = '#ef4444';
+                result.textContent = 'Test Failed. Try admin/admin';
+                result.style.display = 'block';
+            }
+        }
+        
+        function goToOriginalLogin() {
+            window.location.href = 'login.html';
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test login page loaded successfully');
+        });
+    </script>
+</body>
+</html>

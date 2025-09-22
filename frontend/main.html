@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolam Heritage - Digital Cultural Art</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-om"></i>
+                <span>Kolam Heritage</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#analysis" class="nav-link active">Analysis</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About Kolam</a>
+                <div class="nav-profile">
+                    <button class="profile-btn" onclick="toggleProfileMenu()">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="login.html">Login</a>
+                        <a href="signup.html">Sign Up</a>
+                        <a href="index.html">Home</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Kolam Analysis Section -->
+        <section id="analysis" class="section analysis-section active">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Kolam Analysis</h1>
+                    <p class="section-subtitle">Upload and analyze your Kolam patterns with AI-powered insights</p>
+                    <div class="kolam-info-link">
+                        <a href="about.html" class="about-kolam-btn">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Curious about Kolam? Click here!</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="analysis-content">
+                    <!-- Upload Panel -->
+                    <div class="panel-card upload-panel">
+                        <div class="card-title">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Kolam Image</span>
+                        </div>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="upload-content">
+                                <h4>Drop your Kolam image here</h4>
+                                <p>Or click to browse and select a file</p>
+                                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                                <button class="btn btn-outline" onclick="document.getElementById('fileInput').click()">
+                                    <i class="fas fa-folder-open"></i>
+                                    Browse Files
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-options">
+                            <h4>Analysis Options</h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="symmetryAnalysis" checked>
+                                    <span class="checkmark"></span>
+                                    Symmetry Analysis
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="colorExtraction" checked>
+                                    <span class="checkmark"></span>
+                                    Color Extraction
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="patternRecognition" checked>
+                                    <span class="checkmark"></span>
+                                    Pattern Recognition
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="complexityMeasure" checked>
+                                    <span class="checkmark"></span>
+                                    Complexity Measurement
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="analyzeBtn" onclick="analyzeKolam()" disabled>
+                                <i class="fas fa-microscope"></i>
+                                Analyze Pattern
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearAnalysis()">
+                                <i class="fas fa-trash"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Analysis Canvas Panel -->
+                    <div class="panel-card canvas-panel">
+                        <div class="canvas-header">
+                            <div class="card-title">
+                                <i class="fas fa-image"></i>
+                                <span>Kolam Canvas</span>
+                            </div>
+                            <div class="canvas-tools">
+                                <button class="tool-btn" onclick="downloadResults()" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="tool-btn" onclick="shareResults()" title="Share">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                                <button class="tool-btn" onclick="saveToGallery()" title="Save to Gallery">
+                                    <i class="fas fa-save"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="canvas-container">
+                            <canvas id="kolamCanvas" width="500" height="500"></canvas>
+                            <div class="image-preview" id="imagePreview" style="display: none;">
+                                <img id="uploadedImage" alt="Uploaded Kolam">
+                            </div>
+                        </div>
+                        
+                        <!-- Analysis Results -->
+                        <div class="results-panel" id="resultsPanel" style="display: none;">
+                            <div class="results-header">
+                                <h4>Analysis Results</h4>
+                                <div class="results-actions">
+                                    <button class="tool-btn" onclick="exportResults()">
+                                        <i class="fas fa-file-export"></i>
+                                        Export
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="results-content" id="resultsContent">
+                                <!-- Results will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Kolam Gallery</h1>
+                    <p class="section-subtitle">Explore and manage your analyzed Kolam patterns</p>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All Patterns</button>
+                    <button class="filter-btn" data-filter="traditional">Traditional</button>
+                    <button class="filter-btn" data-filter="modern">Modern</button>
+                    <button class="filter-btn" data-filter="favorites">Favorites</button>
+                </div>
+                
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Gallery items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cultural Background Elements -->
+    <div class="cultural-background">
+        <!-- Floating Cultural Elements -->
+        <div class="floating-elements">
+            <div class="floating-rangoli rangoli1">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255, 107, 107, 0.3)" stroke-width="2"/>
+                    <circle cx="25" cy="25" r="10" fill="rgba(255, 217, 61, 0.4)"/>
+                </svg>
+            </div>
+            <div class="floating-rangoli rangoli2">
+                <svg viewBox="0 0 50 50">
+                    <rect x="15" y="15" width="20" height="20" fill="none" stroke="rgba(84, 160, 255, 0.3)" stroke-width="2" transform="rotate(45 25 25)"/>
+                </svg>
+            </div>
+            <div class="floating-rangoli rangoli3">
+                <svg viewBox="0 0 50 50">
+                    <polygon points="25,5 40,40 10,40" fill="rgba(95, 39, 205, 0.3)"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+        <button class="toast-close" onclick="hideToast()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <script src="main-script.js"></script>
+</body>
+</html>

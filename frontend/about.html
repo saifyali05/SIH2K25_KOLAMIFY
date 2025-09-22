@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Kolam - Digital Cultural Heritage</title>
+    <link rel="stylesheet" href="about-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-om"></i>
+                <span>Kolam Heritage</span>
+            </div>
+            <div class="nav-menu">
+                <a href="main.html" class="nav-link">Analysis</a>
+                <a href="main.html#gallery" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link active">Curious about Kolam Click here!</a>
+                <div class="nav-profile">
+                    <button class="profile-btn" onclick="toggleProfileMenu()">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="login.html">Login</a>
+                        <a href="signup.html">Sign Up</a>
+                        <a href="index.html">Home</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">About Kolam</h1>
+                    <p class="hero-subtitle">Discovering the Sacred Art of Indian Heritage</p>
+                    <div class="hero-ornament">
+                        <svg viewBox="0 0 100 100" class="kolam-ornament">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255, 107, 107, 0.5)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(84, 160, 255, 0.5)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255, 217, 61, 0.5)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="10" fill="rgba(255, 107, 107, 0.3)"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Kolam Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="content-card">
+                    <div class="card-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h2>What is Kolam?</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Kolam is a traditional art form practiced primarily in South India, where intricate geometric patterns are drawn on the ground using rice flour or chalk powder. These sacred designs are created daily at dawn by women in front of their homes, temples, and other sacred spaces.</p>
+                        
+                        <p>The word "Kolam" derives from the Tamil words "kol" (beauty) and "am" (creation), literally meaning "beautiful creation." This ancient practice dates back over 5,000 years and represents one of the world's oldest forms of geometric art and mathematical expression.</p>
+                        
+                        <div class="highlight-box">
+                            <i class="fas fa-star"></i>
+                            <p><strong>Did you know?</strong> Kolam patterns are created using a grid of dots, and the challenge lies in connecting these dots with continuous lines without lifting the hand, creating complex geometric forms.</p>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Kolam Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="content-card">
+                    <div class="card-header">
+                        <i class="fas fa-palette"></i>
+                        <h2>Types of Kolam</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="types-grid">
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <i class="fas fa-circle"></i>
+                                    <h3>Pulli Kolam</h3>
+                                </div>
+                                <p>The most common type, drawn by connecting dots (pulli) with curved lines to form intricate patterns. The challenge is to create continuous loops without lifting the hand.</p>
+                            </div>
+                            
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <i class="fas fa-square"></i>
+                                    <h3>Sikku Kolam</h3>
+                                </div>
+                                <p>Free-hand designs drawn without dots, allowing for more creative expression. These often incorporate nature motifs like flowers, leaves, and animals.</p>
+                            </div>
+                            
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <i class="fas fa-star"></i>
+                                    <h3>Neli Kolam</h3>
+                                </div>
+                                <p>Shadow kolams where the background is filled with rice flour, creating a negative space effect. These are often used during festivals and special occasions.</p>
+                            </div>
+                            
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <h3>Colored Kolam</h3>
+                                </div>
+                                <p>Modern variations using colored powders, particularly popular during festivals like Pongal and Diwali, adding vibrancy to traditional designs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Preservation Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="content-card">
+                    <div class="card-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h2>Digital Preservation & Our Mission</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>In our rapidly digitalizing world, traditional art forms like Kolam face the risk of being forgotten by younger generations. Our Kolam Heritage Analyzer project aims to bridge this gap by:</p>
+                        
+                        <div class="mission-list">
+                            <div class="mission-item">
+                                <i class="fas fa-camera"></i>
+                                <div>
+                                    <h4>Digital Documentation</h4>
+                                    <p>Capturing and preserving Kolam patterns through high-quality digital imaging and analysis tools.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mission-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <h4>AI-Powered Analysis</h4>
+                                    <p>Using artificial intelligence to analyze symmetry, complexity, and patterns, helping understand the mathematical beauty of Kolams.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mission-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Educational Platform</h4>
+                                    <p>Creating an interactive learning environment where people worldwide can discover and appreciate Tamil cultural heritage.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mission-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h4>Community Building</h4>
+                                    <p>Connecting Kolam enthusiasts, artists, and researchers to share knowledge and preserve this beautiful tradition.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Create Kolam Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="content-card">
+                    <div class="card-header">
+                        <i class="fas fa-hands"></i>
+                        <h2>How to Create Kolam</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="steps-container">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Prepare the Surface</h4>
+                                    <p>Clean the ground thoroughly and sprinkle water to create a smooth, even surface. Traditionally done at dawn on the doorstep.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Place the Dots</h4>
+                                    <p>Mark dots (pulli) in a grid pattern using your fingers. Start with simple grids like 3x3 or 5x5 for beginners.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Connect with Lines</h4>
+                                    <p>Using rice flour held between thumb and forefinger, draw curved lines connecting the dots to form patterns.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Complete the Design</h4>
+                                    <p>Ensure all lines are connected in continuous loops. No dot should be left unconnected, and no lines should intersect improperly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Experience Kolam Heritage</h2>
+                    <p>Join us in preserving and celebrating this beautiful tradition through digital innovation</p>
+                    <div class="cta-buttons">
+                        <a href="main.html" class="btn btn-primary">
+                            <i class="fas fa-microscope"></i>
+                            Start Analyzing
+                        </a>
+                        <a href="main.html#gallery" class="btn btn-secondary">
+                            <i class="fas fa-images"></i>
+                            View Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cultural Background Elements -->
+    <div class="cultural-background">
+        <div class="floating-elements">
+            <div class="floating-rangoli rangoli1">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255, 107, 107, 0.3)" stroke-width="2"/>
+                    <circle cx="25" cy="25" r="10" fill="rgba(255, 217, 61, 0.4)"/>
+                </svg>
+            </div>
+            <div class="floating-rangoli rangoli2">
+                <svg viewBox="0 0 50 50">
+                    <rect x="15" y="15" width="20" height="20" fill="none" stroke="rgba(84, 160, 255, 0.3)" stroke-width="2" transform="rotate(45 25 25)"/>
+                </svg>
+            </div>
+            <div class="floating-rangoli rangoli3">
+                <svg viewBox="0 0 50 50">
+                    <polygon points="25,5 40,40 10,40" fill="rgba(95, 39, 205, 0.3)"/>
+                </svg>
+            </div>
+            <div class="floating-rangoli rangoli4">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="15" fill="none" stroke="rgba(255, 107, 107, 0.2)" stroke-width="1"/>
+                    <circle cx="25" cy="25" r="8" fill="rgba(84, 160, 255, 0.3)"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="about-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolam - Digital Heritage Art</title>
+    <meta name="description" content="Kolam Heritage Analyzer - Preserving traditional Indian Rangoli art through digital technology for cultural enthusiasts">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Welcome Animation Overlay -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-animation">
+            <div class="rangoli-loader">
+                <svg viewBox="0 0 100 100" class="loader-svg">
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="#ff6b6b" stroke-width="2" class="loader-circle c1"/>
+                    <circle cx="50" cy="50" r="15" fill="none" stroke="#54a0ff" stroke-width="2" class="loader-circle c2"/>
+                    <circle cx="50" cy="50" r="10" fill="none" stroke="#ffd93d" stroke-width="2" class="loader-circle c3"/>
+                    <circle cx="50" cy="50" r="5" fill="#5f27cd" class="loader-center"/>
+                </svg>
+            </div>
+            <h1 class="welcome-text">Welcome to Kolam world</h1>
+            <div class="loading-dots">
+                <span></span><span></span><span></span>
+            </div>
+            <p class="welcome-subtitle">Preserving Heritage Through Digital Art</p>
+            
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">KOLAM HERITAGE ANALYZER</h1>
+                    <h2 class="hero-subtitle">ART IS A HERITAGE</h2>
+                    <p class="hero-description">
+                        A Digital Collection<br>
+                        of Traditional Kolam Patterns<br>
+                        for the Cultural Enthusiast
+                    </p>
+                    <button class="cta-button" onclick="startCreating()">
+                        <span>Create Now!</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="rangoli-container">
+                    <div class="rangoli-pattern" id="rangoliPattern">
+                        <!-- Animated Rangoli Pattern -->
+                        <svg viewBox="0 0 400 400" class="rangoli-svg">
+                            <!-- Central Lotus -->
+                            <g class="lotus-center">
+                                <circle cx="200" cy="200" r="20" fill="#ff6b6b" opacity="0.8"/>
+                                <circle cx="200" cy="200" r="15" fill="#ffd93d" opacity="0.9"/>
+                                <circle cx="200" cy="200" r="8" fill="#fff" opacity="1"/>
+                            </g>
+                            
+                            <!-- Petals Layer 1 -->
+                            <g class="petals-layer1">
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(0 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(45 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(90 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(135 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(180 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(225 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(270 200 200)"/>
+                                <ellipse cx="200" cy="160" rx="12" ry="25" fill="#ff9ff3" opacity="0.7" transform="rotate(315 200 200)"/>
+                            </g>
+                            
+                            <!-- Petals Layer 2 -->
+                            <g class="petals-layer2">
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(22.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(67.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(112.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(157.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(202.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(247.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(292.5 200 200)"/>
+                                <ellipse cx="200" cy="140" rx="15" ry="35" fill="#54a0ff" opacity="0.6" transform="rotate(337.5 200 200)"/>
+                            </g>
+                            
+                            <!-- Outer Ring -->
+                            <g class="outer-ring">
+                                <circle cx="200" cy="200" r="80" fill="none" stroke="#5f27cd" stroke-width="2" opacity="0.5"/>
+                                <circle cx="200" cy="120" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="256" cy="144" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="280" cy="200" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="256" cy="256" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="200" cy="280" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="144" cy="256" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="120" cy="200" r="8" fill="#00d2d3" opacity="0.8"/>
+                                <circle cx="144" cy="144" r="8" fill="#00d2d3" opacity="0.8"/>
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <div class="floating-elements">
+                        <div class="floating-dot dot1"></div>
+                        <div class="floating-dot dot2"></div>
+                        <div class="floating-dot dot3"></div>
+                        <div class="floating-dot dot4"></div>
+                        <div class="floating-dot dot5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Palette Indicator -->
+        <div class="color-palette">
+            <div class="color-dot active" style="background: #ff6b6b;" data-color="coral"></div>
+            <div class="color-dot" style="background: #54a0ff;" data-color="blue"></div>
+            <div class="color-dot" style="background: #5f27cd;" data-color="purple"></div>
+            <div class="color-dot" style="background: #00d2d3;" data-color="turquoise"></div>
+            <div class="color-dot" style="background: #ffd93d;" data-color="gold"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

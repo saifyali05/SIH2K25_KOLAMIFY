@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rangoli Generator</title>
+    <link rel="stylesheet" href="login-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Welcome Section -->
+        <div class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="welcome-title">Welcome Back..!</h1>
+                <p class="welcome-subtitle">Experience the beauty of Indian cultural heritage</p>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="decorative-elements">
+                <div class="floating-shape shape1"></div>
+                <div class="floating-shape shape2"></div>
+                <div class="floating-shape shape3"></div>
+                <div class="rangoli-pattern">
+                    <svg viewBox="0 0 200 200" class="bg-rangoli">
+                        <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(255, 107, 107, 0.4)" stroke-width="3"/>
+                        <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(84, 160, 255, 0.5)" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="15" fill="rgba(255, 217, 61, 0.6)" opacity="0.8"/>
+                        <circle cx="100" cy="50" r="6" fill="rgba(255, 107, 107, 0.7)"/>
+                        <circle cx="150" cy="100" r="6" fill="rgba(84, 160, 255, 0.7)"/>
+                        <circle cx="100" cy="150" r="6" fill="rgba(255, 217, 61, 0.7)"/>
+                        <circle cx="50" cy="100" r="6" fill="rgba(95, 39, 205, 0.7)"/>
+                        <circle cx="130" cy="70" r="4" fill="rgba(255, 107, 107, 0.6)"/>
+                        <circle cx="130" cy="130" r="4" fill="rgba(84, 160, 255, 0.6)"/>
+                        <circle cx="70" cy="130" r="4" fill="rgba(255, 217, 61, 0.6)"/>
+                        <circle cx="70" cy="70" r="4" fill="rgba(95, 39, 205, 0.6)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="login-section">
+            <div class="login-container">
+                <div class="login-header">
+                    <h2>Login</h2>
+                    <p>Glad you're back.!</p>
+                </div>
+
+                <form class="login-form" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <span>Login</span>
+                        <div class="button-loader" id="buttonLoader"></div>
+                    </button>
+
+                    <div class="forgot-password">
+                        <a href="#" onclick="showForgotPassword()">Forgot password ?</a>
+                    </div>
+
+                    <div class="divider">
+                        <span>Or</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn google-btn" onclick="loginWithGoogle()">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn facebook-btn" onclick="loginWithFacebook()">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn github-btn" onclick="loginWithGithub()">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+
+                    <div class="signup-link">
+                        <span>Don't have an account ? <a href="#" onclick="goToSignup()">Signup</a></span>
+                    </div>
+                </form>
+
+                <div class="footer-links">
+                    <a href="#" onclick="showTerms()">Terms & Conditions</a>
+                    <a href="#" onclick="showSupport()">Support</a>
+                    <a href="#" onclick="showCustomerCare()">Customer Care</a>
+                </div>
+            </div>
+
+            <!-- Purple Gradient Background Elements -->
+            <div class="bg-gradients">
+                <div class="gradient-circle circle1"></div>
+                <div class="gradient-circle circle2"></div>
+                <div class="gradient-circle circle3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+        <button class="toast-close" onclick="hideToast()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <script src="login-script.js"></script>
+    
+    <!-- Debug Script -->
+    <script>
+        // Debug script to ensure login form is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Login page DOM loaded');
+            
+            // Force visibility of key elements
+            const loginSection = document.querySelector('.login-section');
+            const loginContainer = document.querySelector('.login-container');
+            const loginForm = document.querySelector('.login-form');
+            
+            if (loginSection) {
+                loginSection.style.display = 'flex';
+                loginSection.style.visibility = 'visible';
+                loginSection.style.opacity = '1';
+                console.log('Login section found and made visible');
+            } else {
+                console.error('Login section not found!');
+            }
+            
+            if (loginContainer) {
+                loginContainer.style.display = 'block';
+                loginContainer.style.visibility = 'visible';
+                loginContainer.style.opacity = '1';
+                console.log('Login container found and made visible');
+            } else {
+                console.error('Login container not found!');
+            }
+            
+            if (loginForm) {
+                loginForm.style.display = 'block';
+                loginForm.style.visibility = 'visible';
+                loginForm.style.opacity = '1';
+                console.log('Login form found and made visible');
+            } else {
+                console.error('Login form not found!');
+            }
+            
+            // Check all form inputs
+            const inputs = document.querySelectorAll('.input-group input');
+            inputs.forEach((input, index) => {
+                input.style.display = 'block';
+                input.style.visibility = 'visible';
+                input.style.opacity = '1';
+                console.log(`Input ${index + 1} made visible:`, input.placeholder);
+            });
+            
+            // Check login button
+            const loginButton = document.querySelector('.login-button');
+            if (loginButton) {
+                loginButton.style.display = 'block';
+                loginButton.style.visibility = 'visible';
+                loginButton.style.opacity = '1';
+                console.log('Login button found and made visible');
+            } else {
+                console.error('Login button not found!');
+            }
+            
+            console.log('Debug script completed - login form should be visible now');
+        });
+    </script>
+</body>
+</html>
