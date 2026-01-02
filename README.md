@@ -209,8 +209,8 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 ## 📞 Support
 
-#### 📧 Email → [your-email@example.com](mailto:your-email@example.com)
-#### 📂 Repository → [Kolamify GitHub](https://github.com/yourusername/kolamify)
+#### 📧 Email → [saifali9b@gmail.com](mailto:saifali9b@gmail.com)
+#### 📂 Repository → [Kolamify GitHub](https://github.com/saifyali05/SIH2K25_KOLAMIFY.git)
 
 ---
 <div align="center">
