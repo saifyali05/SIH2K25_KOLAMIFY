@@ -58,7 +58,7 @@ Kolamify combines multiple AI approaches to **detect dots, trace lines, and clas
 
 ### 1. Clone the Repository
 ``` bash
-git clone https://github.com/yourusername/kolamify.git
+git clone https://github.com/saifyali05/SIH2K25_KOLAMIFY.git
 cd SIH_Project
 ```
 ### 2. Setup Backend
